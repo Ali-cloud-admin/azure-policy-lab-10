@@ -5,45 +5,66 @@ Deploy and assign Azure Policy definitions to enforce compliance across resource
 Validate policy effects by testing non‑compliant deployments and reviewing compliance reports.
 
 ## ⚙️ Resources Deployed
-- Resource Group: rg-policy-lab
-- Policy Definition: **Require a tag and its value on resources**
-- Policy Assignment: Applied to rg-policy-lab
-- Test Storage Account Deployment:
-  - **Compliant** (tag applied: `Environment=Lab`)
-  - **Non‑compliant** (missing required tag, flagged in compliance report)
+| Resource Type | Name / Configuration |
+|---|---|
+| Resource Group | rg-policy-lab |
+| Policy Definition | Require a tag and its value on resources |
+| Policy Assignment Scope | rg-policy-lab |
+| Compliance Validation | Storage account deployments |
+| Required Tag | Environment=Lab |
+| Governance Platform | Azure Policy |
 
-## 📸 Screenshots
+## 📦 Deployment Scope
+This lab focused on implementing Azure governance and compliance controls using Azure Policy.
+The deployment included:
+- Azure Policy definition selection and assignment
+- Resource group scoped compliance enforcement
+- Validation of required tagging standards
+- Testing compliant and non-compliant resource deployments
+- Compliance monitoring through Azure Policy reporting dashboards
 
-**Resource Group Creation**  
-Created resource group rg-policy-lab.  
-![RG Creation](rg-policy.png)
+## 📸 Deployment Flow & Compliance Validation
 
-**Policy Definition Selection**  
-Selected built‑in policy definition “Require a tag and its value on resources.”  
-![Policy Definition](Policy-Definition.png)
+**Resource Group Deployment**  
+Created the `rg-policy-lab` resource group to scope Azrue Policy assignment and compliance validation.
+![RG Creation](assets/rg-policy.png)
 
-**Policy Assignment**  
-Assigned policy to resource group `rg-policy-lab`.  
-![Policy Assignment](Policy-Assignment.png)
+**Azure Policy Definition Selection**  
+Selected the built-in Azure Policy definition `Require a tag and its value on resources` to enforce organizational tagging standards.
+![Policy Definition](assets/Policy-Definition.png)
+
+**Policy Assignment Configuration**  
+Assigned the policy definition at the `rg-policy-lab` resource group scope for compliance enforcement. 
+![Policy Assignment](assets/Policy-Assignment.png)
 
 **Non‑Compliant Storage Account Deployment Attempt**  
-Attempted to deploy a storage account without required tag, flagged as non‑compliant.  
-![Non-Compliant Storage](policy-voilation.png)
+Validated policy enforcement by attempting a storage account deployment without the required tag, resulting in non-compliance detection.
+![Non-Compliant Storage](assets/policy-voilation.png)
 
-**Compliant Storage Account Deployment**  
-Deployed a storage account with required tag (`Environment=Lab`), marked compliant.  
-![Compliant Storage](resource-validation-success.png)
+**Compliant Resource Deployment Validation**  
+Successfully deployed a compliant storage account with the required `Environment-lab` tag applied. 
+![Compliant Storage](assets/resource-validation-success.png)
 
-**Compliance Report**  
-Viewed compliance status in Azure Policy dashboard showing both compliant and non‑compliant resources.  
-![Compliance Report](compliance-report.png)
+**Compliance Monitoring & Reporting**  
+Reviewed Azure Policy compliance reports showing compliant and non-compliant resource evaluation results.
+![Compliance Report](assets/compliance-report.png)
 
-**📚 Key Learnings & Resume Highlights**
+## 📊 Operational Validation
+- Successfully assigned Azure Policy definitions at resource group scope.
+- Validated policy enforcement against non-compliant resource deployments.
+- Confirmed compliant resources passed governance validation requirements.
+- Reviewed Azure Policy compliance dashboards and evaluation reporting.
+- Demonstrated governance monitoring aligned with Azure administration best practices.
 
-Assigned Azure Policy definitions to enforce compliance at resource group scope.
+## 📚 Key Learnings
+- Learned how Azure Policy enforces governance and compliance standards across resources.
+- Understood policy assignment scopes and tagging enforcement mechanisms.
+- Validated compliance behavior using compliant and non-compliant resource deployments.
+- Gained practical exposure to Azure governance monitoring and compliance reporting.
 
-Validated policy effects by flagging non‑compliant storage accounts.
+## 💼 Resume Alignment
+- Implemented Azure Policy governance controls for resource compliance enforcement.
+- Configured policy assignments and validated tag-based compliance requirements.
+- Performed compliance monitoring and reporting using Azure Policy dashboards.
+- Demonstrated practical understanding of Azure governance and organizational policy management.
 
-Reviewed compliance reports to monitor adherence to organizational standards.
-
-Demonstrated governance and compliance management aligned with AZ‑104 domains.
